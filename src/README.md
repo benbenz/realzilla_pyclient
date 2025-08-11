@@ -133,7 +133,7 @@ Class | Method | HTTP request | Description
  - [GeoCountriesCountryCodeGet200Response](docs/GeoCountriesCountryCodeGet200Response.md)
  - [GeoCountriesCountryCodeGet200ResponseData](docs/GeoCountriesCountryCodeGet200ResponseData.md)
  - [GeoCountriesCountryCodeGet200ResponseDataCountry](docs/GeoCountriesCountryCodeGet200ResponseDataCountry.md)
- - [GeoGetCountryByCodeRequest](docs/GeoGetCountryByCodeRequest.md)
+ - [GeoGetCountryByCodeParams](docs/GeoGetCountryByCodeParams.md)
  - [GeoGetCountryByCodeResponse](docs/GeoGetCountryByCodeResponse.md)
  - [GeoGetCountryByCodeResponse200](docs/GeoGetCountryByCodeResponse200.md)
  - [GeoGetCountryByCodeResponse200Data](docs/GeoGetCountryByCodeResponse200Data.md)

@@ -70,7 +70,7 @@ __all__ = [
     "GeoCountriesCountryCodeGet200Response",
     "GeoCountriesCountryCodeGet200ResponseData",
     "GeoCountriesCountryCodeGet200ResponseDataCountry",
-    "GeoGetCountryByCodeRequest",
+    "GeoGetCountryByCodeParams",
     "GeoGetCountryByCodeResponse",
     "GeoGetCountryByCodeResponse200",
     "GeoGetCountryByCodeResponse200Data",
@@ -145,7 +145,7 @@ from realzilla.client.models.fetch_complexity import FetchComplexity as FetchCom
 from realzilla.client.models.geo_countries_country_code_get200_response import GeoCountriesCountryCodeGet200Response as GeoCountriesCountryCodeGet200Response
 from realzilla.client.models.geo_countries_country_code_get200_response_data import GeoCountriesCountryCodeGet200ResponseData as GeoCountriesCountryCodeGet200ResponseData
 from realzilla.client.models.geo_countries_country_code_get200_response_data_country import GeoCountriesCountryCodeGet200ResponseDataCountry as GeoCountriesCountryCodeGet200ResponseDataCountry
-from realzilla.client.models.geo_get_country_by_code_request import GeoGetCountryByCodeRequest as GeoGetCountryByCodeRequest
+from realzilla.client.models.geo_get_country_by_code_params import GeoGetCountryByCodeParams as GeoGetCountryByCodeParams
 from realzilla.client.models.geo_get_country_by_code_response import GeoGetCountryByCodeResponse as GeoGetCountryByCodeResponse
 from realzilla.client.models.geo_get_country_by_code_response200 import GeoGetCountryByCodeResponse200 as GeoGetCountryByCodeResponse200
 from realzilla.client.models.geo_get_country_by_code_response200_data import GeoGetCountryByCodeResponse200Data as GeoGetCountryByCodeResponse200Data

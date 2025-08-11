@@ -23,9 +23,9 @@ from realzilla.client.models.country_code import CountryCode
 from typing import Optional, Set
 from typing_extensions import Self
 
-class GeoGetCountryByCodeRequest(BaseModel):
+class GeoGetCountryByCodeParams(BaseModel):
     """
-    GeoGetCountryByCodeRequest
+    GeoGetCountryByCodeParams
     """ # noqa: E501
     country_code: CountryCode = Field(alias="countryCode")
     __properties: ClassVar[List[str]] = ["countryCode"]
@@ -48,7 +48,7 @@ class GeoGetCountryByCodeRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of GeoGetCountryByCodeRequest from a JSON string"""
+        """Create an instance of GeoGetCountryByCodeParams from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,7 +73,7 @@ class GeoGetCountryByCodeRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of GeoGetCountryByCodeRequest from a dict"""
+        """Create an instance of GeoGetCountryByCodeParams from a dict"""
         if obj is None:
             return None
 

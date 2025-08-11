@@ -6,8 +6,8 @@
 nix develop
 python -m venv .venv
 source .venv/bin/activate
-# install project in dev mode (-e)
-pip install -e .
+# install project in editable mode with dev dependencies
+python -m pip install -e ".[dev]"
 ```
 
 **Note1**: if there is an issue with `direnv` not loading the `.venv` environment next time you open VS Code, you can run `direnv allow .` in the Terminal and on the next run it should detect properly the `.venv` environment.

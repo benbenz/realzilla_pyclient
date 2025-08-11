@@ -14,10 +14,10 @@
 
 import unittest
 
-from realzilla.client.models.geo_get_country_by_code_request import GeoGetCountryByCodeRequest
+from realzilla.client.models.geo_get_country_by_code_params import GeoGetCountryByCodeParams
 
-class TestGeoGetCountryByCodeRequest(unittest.TestCase):
-    """GeoGetCountryByCodeRequest unit test stubs"""
+class TestGeoGetCountryByCodeParams(unittest.TestCase):
+    """GeoGetCountryByCodeParams unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,26 +25,26 @@ class TestGeoGetCountryByCodeRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GeoGetCountryByCodeRequest:
-        """Test GeoGetCountryByCodeRequest
+    def make_instance(self, include_optional) -> GeoGetCountryByCodeParams:
+        """Test GeoGetCountryByCodeParams
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GeoGetCountryByCodeRequest`
+        # uncomment below to create an instance of `GeoGetCountryByCodeParams`
         """
-        model = GeoGetCountryByCodeRequest()
+        model = GeoGetCountryByCodeParams()
         if include_optional:
-            return GeoGetCountryByCodeRequest(
+            return GeoGetCountryByCodeParams(
                 country_code = 'AD'
             )
         else:
-            return GeoGetCountryByCodeRequest(
+            return GeoGetCountryByCodeParams(
                 country_code = 'AD',
         )
         """
 
-    def testGeoGetCountryByCodeRequest(self):
-        """Test GeoGetCountryByCodeRequest"""
+    def testGeoGetCountryByCodeParams(self):
+        """Test GeoGetCountryByCodeParams"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
