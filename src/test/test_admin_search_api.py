@@ -26,8 +26,8 @@ class TestAdminSearchApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_admin_search_queries_get(self) -> None:
-        """Test case for admin_search_queries_get
+    def test_admin_search_queries_country_id_get(self) -> None:
+        """Test case for admin_search_queries_country_id_get
 
         """
         pass

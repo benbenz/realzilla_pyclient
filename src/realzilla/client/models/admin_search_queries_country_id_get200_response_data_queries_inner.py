@@ -17,19 +17,26 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool
+from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List
-from realzilla.client.models.admin_search_queries_get200_response_data import AdminSearchQueriesGet200ResponseData
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdminSearchQueriesGet200Response(BaseModel):
+class AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner(BaseModel):
     """
-    AdminSearchQueriesGet200Response
+    AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner
     """ # noqa: E501
-    success: StrictBool
-    data: AdminSearchQueriesGet200ResponseData
-    __properties: ClassVar[List[str]] = ["success", "data"]
+    id: StrictStr
+    text: StrictStr
+    status: StrictStr
+    __properties: ClassVar[List[str]] = ["id", "text", "status"]
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['NEW', 'IN_PROGRESS', 'COMPLETED', 'FAILED', 'CANCELLED']):
+            raise ValueError("must be one of enum values ('NEW', 'IN_PROGRESS', 'COMPLETED', 'FAILED', 'CANCELLED')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +56,7 @@ class AdminSearchQueriesGet200Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdminSearchQueriesGet200Response from a JSON string"""
+        """Create an instance of AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,14 +77,11 @@ class AdminSearchQueriesGet200Response(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of data
-        if self.data:
-            _dict['data'] = self.data.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdminSearchQueriesGet200Response from a dict"""
+        """Create an instance of AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner from a dict"""
         if obj is None:
             return None
 
@@ -85,8 +89,9 @@ class AdminSearchQueriesGet200Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "success": obj.get("success"),
-            "data": AdminSearchQueriesGet200ResponseData.from_dict(obj["data"]) if obj.get("data") is not None else None
+            "id": obj.get("id"),
+            "text": obj.get("text"),
+            "status": obj.get("status")
         })
         return _obj
 

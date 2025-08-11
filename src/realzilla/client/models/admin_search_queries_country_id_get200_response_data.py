@@ -17,26 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
+from realzilla.client.models.admin_search_queries_country_id_get200_response_data_queries_inner import AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdminSearchQueriesGet200ResponseDataQueriesInner(BaseModel):
+class AdminSearchQueriesCountryIdGet200ResponseData(BaseModel):
     """
-    AdminSearchQueriesGet200ResponseDataQueriesInner
+    AdminSearchQueriesCountryIdGet200ResponseData
     """ # noqa: E501
-    id: StrictStr
-    text: StrictStr
-    status: StrictStr
-    __properties: ClassVar[List[str]] = ["id", "text", "status"]
-
-    @field_validator('status')
-    def status_validate_enum(cls, value):
-        """Validates the enum"""
-        if value not in set(['NEW', 'IN_PROGRESS', 'COMPLETED', 'FAILED', 'CANCELLED']):
-            raise ValueError("must be one of enum values ('NEW', 'IN_PROGRESS', 'COMPLETED', 'FAILED', 'CANCELLED')")
-        return value
+    queries: List[AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner]
+    __properties: ClassVar[List[str]] = ["queries"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +48,7 @@ class AdminSearchQueriesGet200ResponseDataQueriesInner(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdminSearchQueriesGet200ResponseDataQueriesInner from a JSON string"""
+        """Create an instance of AdminSearchQueriesCountryIdGet200ResponseData from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +69,18 @@ class AdminSearchQueriesGet200ResponseDataQueriesInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in queries (list)
+        _items = []
+        if self.queries:
+            for _item_queries in self.queries:
+                if _item_queries:
+                    _items.append(_item_queries.to_dict())
+            _dict['queries'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdminSearchQueriesGet200ResponseDataQueriesInner from a dict"""
+        """Create an instance of AdminSearchQueriesCountryIdGet200ResponseData from a dict"""
         if obj is None:
             return None
 
@@ -89,9 +88,7 @@ class AdminSearchQueriesGet200ResponseDataQueriesInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "text": obj.get("text"),
-            "status": obj.get("status")
+            "queries": [AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner.from_dict(_item) for _item in obj["queries"]] if obj.get("queries") is not None else None
         })
         return _obj
 

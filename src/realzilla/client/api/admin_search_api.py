@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import Optional, Union
 from typing_extensions import Annotated
-from realzilla.client.models.admin_search_queries_get200_response import AdminSearchQueriesGet200Response
+from realzilla.client.models.admin_search_queries_country_id_get200_response import AdminSearchQueriesCountryIdGet200Response
 
 from realzilla.client.api_client import ApiClient, RequestSerialized
 from realzilla.client.api_response import ApiResponse
@@ -40,7 +40,7 @@ class AdminSearchApi:
 
 
     @validate_call
-    def admin_search_queries_get(
+    def admin_search_queries_country_id_get(
         self,
         country_id: StrictStr,
         start: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = None,
@@ -57,8 +57,8 @@ class AdminSearchApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AdminSearchQueriesGet200Response:
-        """admin_search_queries_get
+    ) -> AdminSearchQueriesCountryIdGet200Response:
+        """admin_search_queries_country_id_get
 
 
         :param country_id: (required)
@@ -89,7 +89,7 @@ class AdminSearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._admin_search_queries_get_serialize(
+        _param = self._admin_search_queries_country_id_get_serialize(
             country_id=country_id,
             start=start,
             limit=limit,
@@ -100,7 +100,7 @@ class AdminSearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AdminSearchQueriesGet200Response",
+            '200': "AdminSearchQueriesCountryIdGet200Response",
             '4XX': "AdminWebWebpagesPost4XXResponse",
             '5XX': "AdminWebWebpagesPost4XXResponse",
         }
@@ -116,7 +116,7 @@ class AdminSearchApi:
 
 
     @validate_call
-    def admin_search_queries_get_with_http_info(
+    def admin_search_queries_country_id_get_with_http_info(
         self,
         country_id: StrictStr,
         start: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = None,
@@ -133,8 +133,8 @@ class AdminSearchApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AdminSearchQueriesGet200Response]:
-        """admin_search_queries_get
+    ) -> ApiResponse[AdminSearchQueriesCountryIdGet200Response]:
+        """admin_search_queries_country_id_get
 
 
         :param country_id: (required)
@@ -165,7 +165,7 @@ class AdminSearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._admin_search_queries_get_serialize(
+        _param = self._admin_search_queries_country_id_get_serialize(
             country_id=country_id,
             start=start,
             limit=limit,
@@ -176,7 +176,7 @@ class AdminSearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AdminSearchQueriesGet200Response",
+            '200': "AdminSearchQueriesCountryIdGet200Response",
             '4XX': "AdminWebWebpagesPost4XXResponse",
             '5XX': "AdminWebWebpagesPost4XXResponse",
         }
@@ -192,7 +192,7 @@ class AdminSearchApi:
 
 
     @validate_call
-    def admin_search_queries_get_without_preload_content(
+    def admin_search_queries_country_id_get_without_preload_content(
         self,
         country_id: StrictStr,
         start: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = None,
@@ -210,7 +210,7 @@ class AdminSearchApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """admin_search_queries_get
+        """admin_search_queries_country_id_get
 
 
         :param country_id: (required)
@@ -241,7 +241,7 @@ class AdminSearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._admin_search_queries_get_serialize(
+        _param = self._admin_search_queries_country_id_get_serialize(
             country_id=country_id,
             start=start,
             limit=limit,
@@ -252,7 +252,7 @@ class AdminSearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AdminSearchQueriesGet200Response",
+            '200': "AdminSearchQueriesCountryIdGet200Response",
             '4XX': "AdminWebWebpagesPost4XXResponse",
             '5XX': "AdminWebWebpagesPost4XXResponse",
         }
@@ -263,7 +263,7 @@ class AdminSearchApi:
         return response_data.response
 
 
-    def _admin_search_queries_get_serialize(
+    def _admin_search_queries_country_id_get_serialize(
         self,
         country_id,
         start,
@@ -289,6 +289,8 @@ class AdminSearchApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if country_id is not None:
+            _path_params['countryId'] = country_id
         # process the query parameters
         if start is not None:
             
@@ -297,10 +299,6 @@ class AdminSearchApi:
         if limit is not None:
             
             _query_params.append(('limit', limit))
-            
-        if country_id is not None:
-            
-            _query_params.append(('countryId', country_id))
             
         # process the header parameters
         # process the form parameters
@@ -322,7 +320,7 @@ class AdminSearchApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/admin/search/queries',
+            resource_path='/admin/search/queries/{countryId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

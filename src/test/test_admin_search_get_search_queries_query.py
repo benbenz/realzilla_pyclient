@@ -14,10 +14,10 @@
 
 import unittest
 
-from realzilla.client.models.admin_search_get_search_queries_request import AdminSearchGetSearchQueriesRequest
+from realzilla.client.models.admin_search_get_search_queries_query import AdminSearchGetSearchQueriesQuery
 
-class TestAdminSearchGetSearchQueriesRequest(unittest.TestCase):
-    """AdminSearchGetSearchQueriesRequest unit test stubs"""
+class TestAdminSearchGetSearchQueriesQuery(unittest.TestCase):
+    """AdminSearchGetSearchQueriesQuery unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,28 +25,26 @@ class TestAdminSearchGetSearchQueriesRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AdminSearchGetSearchQueriesRequest:
-        """Test AdminSearchGetSearchQueriesRequest
+    def make_instance(self, include_optional) -> AdminSearchGetSearchQueriesQuery:
+        """Test AdminSearchGetSearchQueriesQuery
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `AdminSearchGetSearchQueriesRequest`
+        # uncomment below to create an instance of `AdminSearchGetSearchQueriesQuery`
         """
-        model = AdminSearchGetSearchQueriesRequest()
+        model = AdminSearchGetSearchQueriesQuery()
         if include_optional:
-            return AdminSearchGetSearchQueriesRequest(
+            return AdminSearchGetSearchQueriesQuery(
                 start = 0,
-                limit = 1,
-                country_id = ''
+                limit = 1
             )
         else:
-            return AdminSearchGetSearchQueriesRequest(
-                country_id = '',
+            return AdminSearchGetSearchQueriesQuery(
         )
         """
 
-    def testAdminSearchGetSearchQueriesRequest(self):
-        """Test AdminSearchGetSearchQueriesRequest"""
+    def testAdminSearchGetSearchQueriesQuery(self):
+        """Test AdminSearchGetSearchQueriesQuery"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

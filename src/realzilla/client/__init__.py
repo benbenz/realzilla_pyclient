@@ -31,13 +31,14 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
-    "AdminSearchGetSearchQueriesRequest",
+    "AdminSearchGetSearchQueriesParams",
+    "AdminSearchGetSearchQueriesQuery",
     "AdminSearchGetSearchQueriesResponse",
     "AdminSearchGetSearchQueriesResponse200",
     "AdminSearchGetSearchQueriesResponse200Data",
-    "AdminSearchQueriesGet200Response",
-    "AdminSearchQueriesGet200ResponseData",
-    "AdminSearchQueriesGet200ResponseDataQueriesInner",
+    "AdminSearchQueriesCountryIdGet200Response",
+    "AdminSearchQueriesCountryIdGet200ResponseData",
+    "AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner",
     "AdminWebAddWebpagesRequest",
     "AdminWebWebpagesPost2XXResponse",
     "AdminWebWebpagesPost4XXResponse",
@@ -105,13 +106,14 @@ from realzilla.client.exceptions import ApiAttributeError as ApiAttributeError
 from realzilla.client.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from realzilla.client.models.admin_search_get_search_queries_request import AdminSearchGetSearchQueriesRequest as AdminSearchGetSearchQueriesRequest
+from realzilla.client.models.admin_search_get_search_queries_params import AdminSearchGetSearchQueriesParams as AdminSearchGetSearchQueriesParams
+from realzilla.client.models.admin_search_get_search_queries_query import AdminSearchGetSearchQueriesQuery as AdminSearchGetSearchQueriesQuery
 from realzilla.client.models.admin_search_get_search_queries_response import AdminSearchGetSearchQueriesResponse as AdminSearchGetSearchQueriesResponse
 from realzilla.client.models.admin_search_get_search_queries_response200 import AdminSearchGetSearchQueriesResponse200 as AdminSearchGetSearchQueriesResponse200
 from realzilla.client.models.admin_search_get_search_queries_response200_data import AdminSearchGetSearchQueriesResponse200Data as AdminSearchGetSearchQueriesResponse200Data
-from realzilla.client.models.admin_search_queries_get200_response import AdminSearchQueriesGet200Response as AdminSearchQueriesGet200Response
-from realzilla.client.models.admin_search_queries_get200_response_data import AdminSearchQueriesGet200ResponseData as AdminSearchQueriesGet200ResponseData
-from realzilla.client.models.admin_search_queries_get200_response_data_queries_inner import AdminSearchQueriesGet200ResponseDataQueriesInner as AdminSearchQueriesGet200ResponseDataQueriesInner
+from realzilla.client.models.admin_search_queries_country_id_get200_response import AdminSearchQueriesCountryIdGet200Response as AdminSearchQueriesCountryIdGet200Response
+from realzilla.client.models.admin_search_queries_country_id_get200_response_data import AdminSearchQueriesCountryIdGet200ResponseData as AdminSearchQueriesCountryIdGet200ResponseData
+from realzilla.client.models.admin_search_queries_country_id_get200_response_data_queries_inner import AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner as AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner
 from realzilla.client.models.admin_web_add_webpages_request import AdminWebAddWebpagesRequest as AdminWebAddWebpagesRequest
 from realzilla.client.models.admin_web_webpages_post2_xx_response import AdminWebWebpagesPost2XXResponse as AdminWebWebpagesPost2XXResponse
 from realzilla.client.models.admin_web_webpages_post4_xx_response import AdminWebWebpagesPost4XXResponse as AdminWebWebpagesPost4XXResponse

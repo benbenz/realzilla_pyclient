@@ -72,11 +72,11 @@ with realzilla.client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.admin_search_queries_get(country_id, start=start, limit=limit)
-        print("The response of AdminSearchApi->admin_search_queries_get:\n")
+        api_response = api_instance.admin_search_queries_country_id_get(country_id, start=start, limit=limit)
+        print("The response of AdminSearchApi->admin_search_queries_country_id_get:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AdminSearchApi->admin_search_queries_get: %s\n" % e)
+        print("Exception when calling AdminSearchApi->admin_search_queries_country_id_get: %s\n" % e)
 
 ```
 
@@ -86,7 +86,7 @@ All URIs are relative to *http://localhost:3000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminSearchApi* | [**admin_search_queries_get**](docs/AdminSearchApi.md#admin_search_queries_get) | **GET** /admin/search/queries | 
+*AdminSearchApi* | [**admin_search_queries_country_id_get**](docs/AdminSearchApi.md#admin_search_queries_country_id_get) | **GET** /admin/search/queries/{countryId} | 
 *AdminWebApi* | [**admin_web_webpages_post**](docs/AdminWebApi.md#admin_web_webpages_post) | **POST** /admin/web/webpages | 
 *GeoApi* | [**geo_countries_country_code_get**](docs/GeoApi.md#geo_countries_country_code_get) | **GET** /geo/countries/{countryCode} | 
 *HealthApi* | [**health_get**](docs/HealthApi.md#health_get) | **GET** /health/ | 
@@ -94,13 +94,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AdminSearchGetSearchQueriesRequest](docs/AdminSearchGetSearchQueriesRequest.md)
+ - [AdminSearchGetSearchQueriesParams](docs/AdminSearchGetSearchQueriesParams.md)
+ - [AdminSearchGetSearchQueriesQuery](docs/AdminSearchGetSearchQueriesQuery.md)
  - [AdminSearchGetSearchQueriesResponse](docs/AdminSearchGetSearchQueriesResponse.md)
  - [AdminSearchGetSearchQueriesResponse200](docs/AdminSearchGetSearchQueriesResponse200.md)
  - [AdminSearchGetSearchQueriesResponse200Data](docs/AdminSearchGetSearchQueriesResponse200Data.md)
- - [AdminSearchQueriesGet200Response](docs/AdminSearchQueriesGet200Response.md)
- - [AdminSearchQueriesGet200ResponseData](docs/AdminSearchQueriesGet200ResponseData.md)
- - [AdminSearchQueriesGet200ResponseDataQueriesInner](docs/AdminSearchQueriesGet200ResponseDataQueriesInner.md)
+ - [AdminSearchQueriesCountryIdGet200Response](docs/AdminSearchQueriesCountryIdGet200Response.md)
+ - [AdminSearchQueriesCountryIdGet200ResponseData](docs/AdminSearchQueriesCountryIdGet200ResponseData.md)
+ - [AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner](docs/AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner.md)
  - [AdminWebAddWebpagesRequest](docs/AdminWebAddWebpagesRequest.md)
  - [AdminWebWebpagesPost2XXResponse](docs/AdminWebWebpagesPost2XXResponse.md)
  - [AdminWebWebpagesPost4XXResponse](docs/AdminWebWebpagesPost4XXResponse.md)

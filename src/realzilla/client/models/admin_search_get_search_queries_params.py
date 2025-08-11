@@ -18,19 +18,16 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing_extensions import Annotated
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdminSearchGetSearchQueriesRequest(BaseModel):
+class AdminSearchGetSearchQueriesParams(BaseModel):
     """
-    AdminSearchGetSearchQueriesRequest
+    AdminSearchGetSearchQueriesParams
     """ # noqa: E501
-    start: Optional[Union[Annotated[float, Field(strict=True, ge=0)], Annotated[int, Field(strict=True, ge=0)]]] = None
-    limit: Optional[Union[Annotated[float, Field(strict=True, ge=1)], Annotated[int, Field(strict=True, ge=1)]]] = None
     country_id: StrictStr = Field(alias="countryId")
-    __properties: ClassVar[List[str]] = ["start", "limit", "countryId"]
+    __properties: ClassVar[List[str]] = ["countryId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +47,7 @@ class AdminSearchGetSearchQueriesRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdminSearchGetSearchQueriesRequest from a JSON string"""
+        """Create an instance of AdminSearchGetSearchQueriesParams from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +72,7 @@ class AdminSearchGetSearchQueriesRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdminSearchGetSearchQueriesRequest from a dict"""
+        """Create an instance of AdminSearchGetSearchQueriesParams from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +80,6 @@ class AdminSearchGetSearchQueriesRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "start": obj.get("start"),
-            "limit": obj.get("limit"),
             "countryId": obj.get("countryId")
         })
         return _obj

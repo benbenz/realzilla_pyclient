@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**admin_search_queries_get**](AdminSearchApi.md#admin_search_queries_get) | **GET** /admin/search/queries | 
+[**admin_search_queries_country_id_get**](AdminSearchApi.md#admin_search_queries_country_id_get) | **GET** /admin/search/queries/{countryId} | 
 
 
-# **admin_search_queries_get**
-> AdminSearchQueriesGet200Response admin_search_queries_get(country_id, start=start, limit=limit)
+# **admin_search_queries_country_id_get**
+> AdminSearchQueriesCountryIdGet200Response admin_search_queries_country_id_get(country_id, start=start, limit=limit)
 
 ### Example
 
 
 ```python
 import realzilla.client
-from realzilla.client.models.admin_search_queries_get200_response import AdminSearchQueriesGet200Response
+from realzilla.client.models.admin_search_queries_country_id_get200_response import AdminSearchQueriesCountryIdGet200Response
 from realzilla.client.rest import ApiException
 from pprint import pprint
 
@@ -35,11 +35,11 @@ with realzilla.client.ApiClient(configuration) as api_client:
     limit = 3.4 # float |  (optional)
 
     try:
-        api_response = api_instance.admin_search_queries_get(country_id, start=start, limit=limit)
-        print("The response of AdminSearchApi->admin_search_queries_get:\n")
+        api_response = api_instance.admin_search_queries_country_id_get(country_id, start=start, limit=limit)
+        print("The response of AdminSearchApi->admin_search_queries_country_id_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdminSearchApi->admin_search_queries_get: %s\n" % e)
+        print("Exception when calling AdminSearchApi->admin_search_queries_country_id_get: %s\n" % e)
 ```
 
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdminSearchQueriesGet200Response**](AdminSearchQueriesGet200Response.md)
+[**AdminSearchQueriesCountryIdGet200Response**](AdminSearchQueriesCountryIdGet200Response.md)
 
 ### Authorization
 
