@@ -40,7 +40,7 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["realzilla.client.*"]
+include = ["realzilla.client","realzilla.client.*"]
 exclude = ["tests*"]
 namespaces = true
 
