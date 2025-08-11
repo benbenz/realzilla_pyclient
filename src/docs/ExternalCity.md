@@ -13,10 +13,10 @@ Name | Type | Description | Notes
 **population** | **float** |  | 
 **surface** | **float** |  | 
 **density** | **float** |  | 
-**administrative_level1** | [**ExternalAdministrativeLevel**](ExternalAdministrativeLevel.md) |  | [optional] 
-**administrative_level2** | [**ExternalAdministrativeLevel**](ExternalAdministrativeLevel.md) |  | [optional] 
-**administrative_level3** | [**ExternalAdministrativeLevel**](ExternalAdministrativeLevel.md) |  | [optional] 
-**administrative_level4** | [**ExternalAdministrativeLevel**](ExternalAdministrativeLevel.md) |  | [optional] 
+**administrative_level1** | [**ExternalAdministrativeLevelShallow**](ExternalAdministrativeLevelShallow.md) |  | [optional] 
+**administrative_level2** | [**ExternalAdministrativeLevelShallow**](ExternalAdministrativeLevelShallow.md) |  | [optional] 
+**administrative_level3** | [**ExternalAdministrativeLevelShallow**](ExternalAdministrativeLevelShallow.md) |  | [optional] 
+**administrative_level4** | [**ExternalAdministrativeLevelShallow**](ExternalAdministrativeLevelShallow.md) |  | [optional] 
 
 ## Example
 

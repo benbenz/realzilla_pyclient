@@ -37,13 +37,48 @@ class TestExternalSearchQuery(unittest.TestCase):
             return ExternalSearchQuery(
                 id = '',
                 text = '',
-                status = 'NEW'
+                status = 'NEW',
+                population = 1.337,
+                search_entry = realzilla.client.models.external_search_entry.ExternalSearchEntry(
+                    id = '', 
+                    type = 'WEBSITE', 
+                    text = '', 
+                    level = 'COUNTRY', ),
+                city = realzilla.client.models.external_city.ExternalCity(
+                    id = '', 
+                    code = '', 
+                    name = '', 
+                    name_normalized = '', 
+                    status = 'ACTIVE', 
+                    population = 1.337, 
+                    surface = 1.337, 
+                    density = 1.337, 
+                    administrative_level1 = null, 
+                    administrative_level2 = null, 
+                    administrative_level3 = null, 
+                    administrative_level4 = null, ),
+                country = realzilla.client.models.external_country.ExternalCountry(
+                    id = '', 
+                    code = 'AD', 
+                    name = '', 
+                    name_normalized = '', 
+                    population = 1.337, 
+                    surface = 1.337, 
+                    administrative_level1_type = null, 
+                    administrative_level1_name = '', 
+                    administrative_level2_type = null, 
+                    administrative_level2_name = '', 
+                    administrative_level3_type = null, 
+                    administrative_level3_name = '', 
+                    administrative_level4_type = null, 
+                    administrative_level4_name = '', )
             )
         else:
             return ExternalSearchQuery(
                 id = '',
                 text = '',
                 status = 'NEW',
+                population = 1.337,
         )
         """
 

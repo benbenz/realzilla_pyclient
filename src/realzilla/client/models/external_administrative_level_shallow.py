@@ -17,18 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
-from realzilla.client.models.external_search_query import ExternalSearchQuery
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AdminSearchGetSearchQueriesResponse200Data(BaseModel):
+class ExternalAdministrativeLevelShallow(BaseModel):
     """
-    AdminSearchGetSearchQueriesResponse200Data
+    ExternalAdministrativeLevelShallow
     """ # noqa: E501
-    queries: List[ExternalSearchQuery]
-    __properties: ClassVar[List[str]] = ["queries"]
+    id: StrictStr
+    name: StrictStr
+    name_normalized: StrictStr = Field(alias="nameNormalized")
+    level: Union[StrictFloat, StrictInt]
+    code: StrictStr
+    __properties: ClassVar[List[str]] = ["id", "name", "nameNormalized", "level", "code"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +51,7 @@ class AdminSearchGetSearchQueriesResponse200Data(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AdminSearchGetSearchQueriesResponse200Data from a JSON string"""
+        """Create an instance of ExternalAdministrativeLevelShallow from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,18 +72,11 @@ class AdminSearchGetSearchQueriesResponse200Data(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in queries (list)
-        _items = []
-        if self.queries:
-            for _item_queries in self.queries:
-                if _item_queries:
-                    _items.append(_item_queries.to_dict())
-            _dict['queries'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AdminSearchGetSearchQueriesResponse200Data from a dict"""
+        """Create an instance of ExternalAdministrativeLevelShallow from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +84,11 @@ class AdminSearchGetSearchQueriesResponse200Data(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "queries": [ExternalSearchQuery.from_dict(_item) for _item in obj["queries"]] if obj.get("queries") is not None else None
+            "id": obj.get("id"),
+            "name": obj.get("name"),
+            "nameNormalized": obj.get("nameNormalized"),
+            "level": obj.get("level"),
+            "code": obj.get("code")
         })
         return _obj
 

@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from realzilla.client.models.admin_web_webpages_post2_xx_response import AdminWebWebpagesPost2XXResponse
 from realzilla.client.models.admin_web_webpages_post_request import AdminWebWebpagesPostRequest
+from realzilla.client.models.simple_response import SimpleResponse
 
 from realzilla.client.api_client import ApiClient, RequestSerialized
 from realzilla.client.api_response import ApiResponse
@@ -53,7 +53,7 @@ class AdminWebApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AdminWebWebpagesPost2XXResponse:
+    ) -> SimpleResponse:
         """admin_web_webpages_post
 
 
@@ -90,9 +90,9 @@ class AdminWebApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "AdminWebWebpagesPost2XXResponse",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '2XX': "SimpleResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -121,7 +121,7 @@ class AdminWebApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AdminWebWebpagesPost2XXResponse]:
+    ) -> ApiResponse[SimpleResponse]:
         """admin_web_webpages_post
 
 
@@ -158,9 +158,9 @@ class AdminWebApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "AdminWebWebpagesPost2XXResponse",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '2XX': "SimpleResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -226,9 +226,9 @@ class AdminWebApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '2XX': "AdminWebWebpagesPost2XXResponse",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '2XX': "SimpleResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
-from realzilla.client.models.geo_countries_country_code_get200_response_data_country import GeoCountriesCountryCodeGet200ResponseDataCountry
+from realzilla.client.models.external_country import ExternalCountry
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class GeoCountriesCountryCodeGet200ResponseData(BaseModel):
     """
     GeoCountriesCountryCodeGet200ResponseData
     """ # noqa: E501
-    country: GeoCountriesCountryCodeGet200ResponseDataCountry
+    country: ExternalCountry
     __properties: ClassVar[List[str]] = ["country"]
 
     model_config = ConfigDict(
@@ -84,7 +84,7 @@ class GeoCountriesCountryCodeGet200ResponseData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "country": GeoCountriesCountryCodeGet200ResponseDataCountry.from_dict(obj["country"]) if obj.get("country") is not None else None
+            "country": ExternalCountry.from_dict(obj["country"]) if obj.get("country") is not None else None
         })
         return _obj
 

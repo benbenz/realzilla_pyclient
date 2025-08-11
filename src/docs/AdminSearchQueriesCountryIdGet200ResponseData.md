@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**queries** | [**List[AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner]**](AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner.md) |  | 
+**queries** | [**List[ExternalSearchQuery]**](ExternalSearchQuery.md) |  | 
 
 ## Example
 

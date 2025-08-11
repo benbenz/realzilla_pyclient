@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
-from realzilla.client.models.admin_search_queries_country_id_get200_response_data_queries_inner import AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner
+from realzilla.client.models.external_search_query import ExternalSearchQuery
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +27,7 @@ class AdminSearchQueriesCountryIdGet200ResponseData(BaseModel):
     """
     AdminSearchQueriesCountryIdGet200ResponseData
     """ # noqa: E501
-    queries: List[AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner]
+    queries: List[ExternalSearchQuery]
     __properties: ClassVar[List[str]] = ["queries"]
 
     model_config = ConfigDict(
@@ -88,7 +88,7 @@ class AdminSearchQueriesCountryIdGet200ResponseData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "queries": [AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner.from_dict(_item) for _item in obj["queries"]] if obj.get("queries") is not None else None
+            "queries": [ExternalSearchQuery.from_dict(_item) for _item in obj["queries"]] if obj.get("queries") is not None else None
         })
         return _obj
 

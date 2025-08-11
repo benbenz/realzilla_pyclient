@@ -38,10 +38,32 @@ class TestAdminSearchQueriesCountryIdGet200Response(unittest.TestCase):
                 success = True,
                 data = realzilla.client.models._admin_search_queries__country_id__get_200_response_data._admin_search_queries__countryId__get_200_response_data(
                     queries = [
-                        realzilla.client.models._admin_search_queries__country_id__get_200_response_data_queries_inner._admin_search_queries__countryId__get_200_response_data_queries_inner(
+                        realzilla.client.models.external_search_query.ExternalSearchQuery(
                             id = '', 
                             text = '', 
-                            status = 'NEW', )
+                            status = 'NEW', 
+                            population = 1.337, 
+                            search_entry = realzilla.client.models.external_search_entry.ExternalSearchEntry(
+                                id = '', 
+                                type = 'WEBSITE', 
+                                text = '', 
+                                level = 'COUNTRY', ), 
+                            city = null, 
+                            country = realzilla.client.models.external_country.ExternalCountry(
+                                id = '', 
+                                code = 'AD', 
+                                name = '', 
+                                name_normalized = '', 
+                                population = 1.337, 
+                                surface = 1.337, 
+                                administrative_level1_type = null, 
+                                administrative_level1_name = '', 
+                                administrative_level2_type = null, 
+                                administrative_level2_name = '', 
+                                administrative_level3_type = null, 
+                                administrative_level3_name = '', 
+                                administrative_level4_type = null, 
+                                administrative_level4_name = '', ), )
                         ], )
             )
         else:
@@ -49,10 +71,32 @@ class TestAdminSearchQueriesCountryIdGet200Response(unittest.TestCase):
                 success = True,
                 data = realzilla.client.models._admin_search_queries__country_id__get_200_response_data._admin_search_queries__countryId__get_200_response_data(
                     queries = [
-                        realzilla.client.models._admin_search_queries__country_id__get_200_response_data_queries_inner._admin_search_queries__countryId__get_200_response_data_queries_inner(
+                        realzilla.client.models.external_search_query.ExternalSearchQuery(
                             id = '', 
                             text = '', 
-                            status = 'NEW', )
+                            status = 'NEW', 
+                            population = 1.337, 
+                            search_entry = realzilla.client.models.external_search_entry.ExternalSearchEntry(
+                                id = '', 
+                                type = 'WEBSITE', 
+                                text = '', 
+                                level = 'COUNTRY', ), 
+                            city = null, 
+                            country = realzilla.client.models.external_country.ExternalCountry(
+                                id = '', 
+                                code = 'AD', 
+                                name = '', 
+                                name_normalized = '', 
+                                population = 1.337, 
+                                surface = 1.337, 
+                                administrative_level1_type = null, 
+                                administrative_level1_name = '', 
+                                administrative_level2_type = null, 
+                                administrative_level2_name = '', 
+                                administrative_level3_type = null, 
+                                administrative_level3_name = '', 
+                                administrative_level4_type = null, 
+                                administrative_level4_name = '', ), )
                         ], ),
         )
         """

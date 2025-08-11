@@ -43,34 +43,30 @@ class TestExternalCity(unittest.TestCase):
                 population = 1.337,
                 surface = 1.337,
                 density = 1.337,
-                administrative_level1 = realzilla.client.models.external_administrative_level.ExternalAdministrativeLevel(
+                administrative_level1 = realzilla.client.models.external_administrative_level_shallow.ExternalAdministrativeLevelShallow(
                     id = '', 
                     name = '', 
                     name_normalized = '', 
                     level = 1.337, 
-                    code = '', 
-                    parent = null, ),
-                administrative_level2 = realzilla.client.models.external_administrative_level.ExternalAdministrativeLevel(
+                    code = '', ),
+                administrative_level2 = realzilla.client.models.external_administrative_level_shallow.ExternalAdministrativeLevelShallow(
                     id = '', 
                     name = '', 
                     name_normalized = '', 
                     level = 1.337, 
-                    code = '', 
-                    parent = null, ),
-                administrative_level3 = realzilla.client.models.external_administrative_level.ExternalAdministrativeLevel(
+                    code = '', ),
+                administrative_level3 = realzilla.client.models.external_administrative_level_shallow.ExternalAdministrativeLevelShallow(
                     id = '', 
                     name = '', 
                     name_normalized = '', 
                     level = 1.337, 
-                    code = '', 
-                    parent = null, ),
-                administrative_level4 = realzilla.client.models.external_administrative_level.ExternalAdministrativeLevel(
+                    code = '', ),
+                administrative_level4 = realzilla.client.models.external_administrative_level_shallow.ExternalAdministrativeLevelShallow(
                     id = '', 
                     name = '', 
                     name_normalized = '', 
                     level = 1.337, 
-                    code = '', 
-                    parent = null, )
+                    code = '', )
             )
         else:
             return ExternalCity(

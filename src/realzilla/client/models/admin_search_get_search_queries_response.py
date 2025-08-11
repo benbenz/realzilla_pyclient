@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
-from realzilla.client.models.admin_search_get_search_queries_response200 import AdminSearchGetSearchQueriesResponse200
+from realzilla.client.models.admin_search_queries_country_id_get200_response import AdminSearchQueriesCountryIdGet200Response
 from realzilla.client.models.error_response import ErrorResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class AdminSearchGetSearchQueriesResponse(BaseModel):
     """
     AdminSearchGetSearchQueriesResponse
     """ # noqa: E501
-    var_200: AdminSearchGetSearchQueriesResponse200 = Field(alias="200")
+    var_200: AdminSearchQueriesCountryIdGet200Response = Field(alias="200")
     var_4xx: ErrorResponse = Field(alias="4xx")
     var_5xx: ErrorResponse = Field(alias="5xx")
     __properties: ClassVar[List[str]] = ["200", "4xx", "5xx"]
@@ -93,7 +93,7 @@ class AdminSearchGetSearchQueriesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "200": AdminSearchGetSearchQueriesResponse200.from_dict(obj["200"]) if obj.get("200") is not None else None,
+            "200": AdminSearchQueriesCountryIdGet200Response.from_dict(obj["200"]) if obj.get("200") is not None else None,
             "4xx": ErrorResponse.from_dict(obj["4xx"]) if obj.get("4xx") is not None else None,
             "5xx": ErrorResponse.from_dict(obj["5xx"]) if obj.get("5xx") is not None else None
         })

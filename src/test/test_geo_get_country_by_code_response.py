@@ -35,9 +35,9 @@ class TestGeoGetCountryByCodeResponse(unittest.TestCase):
         model = GeoGetCountryByCodeResponse()
         if include_optional:
             return GeoGetCountryByCodeResponse(
-                var_200 = realzilla.client.models.geo_get_country_by_code_response_200.GeoGetCountryByCodeResponse_200(
+                var_200 = realzilla.client.models._geo_countries__country_code__get_200_response._geo_countries__countryCode__get_200_response(
                     success = True, 
-                    data = realzilla.client.models.geo_get_country_by_code_response_200_data.GeoGetCountryByCodeResponse_200_data(
+                    data = realzilla.client.models._geo_countries__country_code__get_200_response_data._geo_countries__countryCode__get_200_response_data(
                         country = realzilla.client.models.external_country.ExternalCountry(
                             id = '', 
                             code = 'AD', 
@@ -64,9 +64,9 @@ class TestGeoGetCountryByCodeResponse(unittest.TestCase):
             )
         else:
             return GeoGetCountryByCodeResponse(
-                var_200 = realzilla.client.models.geo_get_country_by_code_response_200.GeoGetCountryByCodeResponse_200(
+                var_200 = realzilla.client.models._geo_countries__country_code__get_200_response._geo_countries__countryCode__get_200_response(
                     success = True, 
-                    data = realzilla.client.models.geo_get_country_by_code_response_200_data.GeoGetCountryByCodeResponse_200_data(
+                    data = realzilla.client.models._geo_countries__country_code__get_200_response_data._geo_countries__countryCode__get_200_response_data(
                         country = realzilla.client.models.external_country.ExternalCountry(
                             id = '', 
                             code = 'AD', 

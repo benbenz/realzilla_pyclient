@@ -34,14 +34,9 @@ __all__ = [
     "AdminSearchGetSearchQueriesParams",
     "AdminSearchGetSearchQueriesQuery",
     "AdminSearchGetSearchQueriesResponse",
-    "AdminSearchGetSearchQueriesResponse200",
-    "AdminSearchGetSearchQueriesResponse200Data",
     "AdminSearchQueriesCountryIdGet200Response",
     "AdminSearchQueriesCountryIdGet200ResponseData",
-    "AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner",
     "AdminWebAddWebpagesRequest",
-    "AdminWebWebpagesPost2XXResponse",
-    "AdminWebWebpagesPost4XXResponse",
     "AdminWebWebpagesPostRequest",
     "AdministrativeLevelType",
     "AgencyType",
@@ -53,6 +48,7 @@ __all__ = [
     "ErrorResponse",
     "ExternalAddress",
     "ExternalAdministrativeLevel",
+    "ExternalAdministrativeLevelShallow",
     "ExternalAgency",
     "ExternalAgent",
     "ExternalArea",
@@ -69,11 +65,8 @@ __all__ = [
     "FetchComplexity",
     "GeoCountriesCountryCodeGet200Response",
     "GeoCountriesCountryCodeGet200ResponseData",
-    "GeoCountriesCountryCodeGet200ResponseDataCountry",
     "GeoGetCountryByCodeParams",
     "GeoGetCountryByCodeResponse",
-    "GeoGetCountryByCodeResponse200",
-    "GeoGetCountryByCodeResponse200Data",
     "GeoLevel",
     "HeatingType",
     "ListingStatus",
@@ -109,14 +102,9 @@ from realzilla.client.exceptions import ApiException as ApiException
 from realzilla.client.models.admin_search_get_search_queries_params import AdminSearchGetSearchQueriesParams as AdminSearchGetSearchQueriesParams
 from realzilla.client.models.admin_search_get_search_queries_query import AdminSearchGetSearchQueriesQuery as AdminSearchGetSearchQueriesQuery
 from realzilla.client.models.admin_search_get_search_queries_response import AdminSearchGetSearchQueriesResponse as AdminSearchGetSearchQueriesResponse
-from realzilla.client.models.admin_search_get_search_queries_response200 import AdminSearchGetSearchQueriesResponse200 as AdminSearchGetSearchQueriesResponse200
-from realzilla.client.models.admin_search_get_search_queries_response200_data import AdminSearchGetSearchQueriesResponse200Data as AdminSearchGetSearchQueriesResponse200Data
 from realzilla.client.models.admin_search_queries_country_id_get200_response import AdminSearchQueriesCountryIdGet200Response as AdminSearchQueriesCountryIdGet200Response
 from realzilla.client.models.admin_search_queries_country_id_get200_response_data import AdminSearchQueriesCountryIdGet200ResponseData as AdminSearchQueriesCountryIdGet200ResponseData
-from realzilla.client.models.admin_search_queries_country_id_get200_response_data_queries_inner import AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner as AdminSearchQueriesCountryIdGet200ResponseDataQueriesInner
 from realzilla.client.models.admin_web_add_webpages_request import AdminWebAddWebpagesRequest as AdminWebAddWebpagesRequest
-from realzilla.client.models.admin_web_webpages_post2_xx_response import AdminWebWebpagesPost2XXResponse as AdminWebWebpagesPost2XXResponse
-from realzilla.client.models.admin_web_webpages_post4_xx_response import AdminWebWebpagesPost4XXResponse as AdminWebWebpagesPost4XXResponse
 from realzilla.client.models.admin_web_webpages_post_request import AdminWebWebpagesPostRequest as AdminWebWebpagesPostRequest
 from realzilla.client.models.administrative_level_type import AdministrativeLevelType as AdministrativeLevelType
 from realzilla.client.models.agency_type import AgencyType as AgencyType
@@ -128,6 +116,7 @@ from realzilla.client.models.default_simple_response import DefaultSimpleRespons
 from realzilla.client.models.error_response import ErrorResponse as ErrorResponse
 from realzilla.client.models.external_address import ExternalAddress as ExternalAddress
 from realzilla.client.models.external_administrative_level import ExternalAdministrativeLevel as ExternalAdministrativeLevel
+from realzilla.client.models.external_administrative_level_shallow import ExternalAdministrativeLevelShallow as ExternalAdministrativeLevelShallow
 from realzilla.client.models.external_agency import ExternalAgency as ExternalAgency
 from realzilla.client.models.external_agent import ExternalAgent as ExternalAgent
 from realzilla.client.models.external_area import ExternalArea as ExternalArea
@@ -144,11 +133,8 @@ from realzilla.client.models.external_zip_code import ExternalZipCode as Externa
 from realzilla.client.models.fetch_complexity import FetchComplexity as FetchComplexity
 from realzilla.client.models.geo_countries_country_code_get200_response import GeoCountriesCountryCodeGet200Response as GeoCountriesCountryCodeGet200Response
 from realzilla.client.models.geo_countries_country_code_get200_response_data import GeoCountriesCountryCodeGet200ResponseData as GeoCountriesCountryCodeGet200ResponseData
-from realzilla.client.models.geo_countries_country_code_get200_response_data_country import GeoCountriesCountryCodeGet200ResponseDataCountry as GeoCountriesCountryCodeGet200ResponseDataCountry
 from realzilla.client.models.geo_get_country_by_code_params import GeoGetCountryByCodeParams as GeoGetCountryByCodeParams
 from realzilla.client.models.geo_get_country_by_code_response import GeoGetCountryByCodeResponse as GeoGetCountryByCodeResponse
-from realzilla.client.models.geo_get_country_by_code_response200 import GeoGetCountryByCodeResponse200 as GeoGetCountryByCodeResponse200
-from realzilla.client.models.geo_get_country_by_code_response200_data import GeoGetCountryByCodeResponse200Data as GeoGetCountryByCodeResponse200Data
 from realzilla.client.models.geo_level import GeoLevel as GeoLevel
 from realzilla.client.models.heating_type import HeatingType as HeatingType
 from realzilla.client.models.listing_status import ListingStatus as ListingStatus

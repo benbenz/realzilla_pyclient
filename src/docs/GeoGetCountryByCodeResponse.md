@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_200** | [**GeoGetCountryByCodeResponse200**](GeoGetCountryByCodeResponse200.md) |  | 
+**var_200** | [**GeoCountriesCountryCodeGet200Response**](GeoCountriesCountryCodeGet200Response.md) |  | 
 **var_4xx** | [**ErrorResponse**](ErrorResponse.md) |  | 
 **var_5xx** | [**ErrorResponse**](ErrorResponse.md) |  | 
 

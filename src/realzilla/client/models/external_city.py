@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from realzilla.client.models.city_status import CityStatus
-from realzilla.client.models.external_administrative_level import ExternalAdministrativeLevel
+from realzilla.client.models.external_administrative_level_shallow import ExternalAdministrativeLevelShallow
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,10 +36,10 @@ class ExternalCity(BaseModel):
     population: Optional[Union[StrictFloat, StrictInt]]
     surface: Optional[Union[StrictFloat, StrictInt]]
     density: Optional[Union[StrictFloat, StrictInt]]
-    administrative_level1: Optional[ExternalAdministrativeLevel] = Field(default=None, alias="administrativeLevel1")
-    administrative_level2: Optional[ExternalAdministrativeLevel] = Field(default=None, alias="administrativeLevel2")
-    administrative_level3: Optional[ExternalAdministrativeLevel] = Field(default=None, alias="administrativeLevel3")
-    administrative_level4: Optional[ExternalAdministrativeLevel] = Field(default=None, alias="administrativeLevel4")
+    administrative_level1: Optional[ExternalAdministrativeLevelShallow] = Field(default=None, alias="administrativeLevel1")
+    administrative_level2: Optional[ExternalAdministrativeLevelShallow] = Field(default=None, alias="administrativeLevel2")
+    administrative_level3: Optional[ExternalAdministrativeLevelShallow] = Field(default=None, alias="administrativeLevel3")
+    administrative_level4: Optional[ExternalAdministrativeLevelShallow] = Field(default=None, alias="administrativeLevel4")
     __properties: ClassVar[List[str]] = ["id", "code", "name", "nameNormalized", "status", "population", "surface", "density", "administrativeLevel1", "administrativeLevel2", "administrativeLevel3", "administrativeLevel4"]
 
     model_config = ConfigDict(
@@ -148,10 +148,10 @@ class ExternalCity(BaseModel):
             "population": obj.get("population"),
             "surface": obj.get("surface"),
             "density": obj.get("density"),
-            "administrativeLevel1": ExternalAdministrativeLevel.from_dict(obj["administrativeLevel1"]) if obj.get("administrativeLevel1") is not None else None,
-            "administrativeLevel2": ExternalAdministrativeLevel.from_dict(obj["administrativeLevel2"]) if obj.get("administrativeLevel2") is not None else None,
-            "administrativeLevel3": ExternalAdministrativeLevel.from_dict(obj["administrativeLevel3"]) if obj.get("administrativeLevel3") is not None else None,
-            "administrativeLevel4": ExternalAdministrativeLevel.from_dict(obj["administrativeLevel4"]) if obj.get("administrativeLevel4") is not None else None
+            "administrativeLevel1": ExternalAdministrativeLevelShallow.from_dict(obj["administrativeLevel1"]) if obj.get("administrativeLevel1") is not None else None,
+            "administrativeLevel2": ExternalAdministrativeLevelShallow.from_dict(obj["administrativeLevel2"]) if obj.get("administrativeLevel2") is not None else None,
+            "administrativeLevel3": ExternalAdministrativeLevelShallow.from_dict(obj["administrativeLevel3"]) if obj.get("administrativeLevel3") is not None else None,
+            "administrativeLevel4": ExternalAdministrativeLevelShallow.from_dict(obj["administrativeLevel4"]) if obj.get("administrativeLevel4") is not None else None
         })
         return _obj
 

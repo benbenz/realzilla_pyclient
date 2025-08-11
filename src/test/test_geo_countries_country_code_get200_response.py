@@ -37,40 +37,40 @@ class TestGeoCountriesCountryCodeGet200Response(unittest.TestCase):
             return GeoCountriesCountryCodeGet200Response(
                 success = True,
                 data = realzilla.client.models._geo_countries__country_code__get_200_response_data._geo_countries__countryCode__get_200_response_data(
-                    country = realzilla.client.models._geo_countries__country_code__get_200_response_data_country._geo_countries__countryCode__get_200_response_data_country(
+                    country = realzilla.client.models.external_country.ExternalCountry(
                         id = '', 
                         code = 'AD', 
                         name = '', 
                         name_normalized = '', 
                         population = 1.337, 
                         surface = 1.337, 
-                        administrative_level1_type = 'STATE', 
+                        administrative_level1_type = null, 
                         administrative_level1_name = '', 
-                        administrative_level2_type = 'STATE', 
+                        administrative_level2_type = null, 
                         administrative_level2_name = '', 
-                        administrative_level3_type = 'STATE', 
+                        administrative_level3_type = null, 
                         administrative_level3_name = '', 
-                        administrative_level4_type = 'STATE', 
+                        administrative_level4_type = null, 
                         administrative_level4_name = '', ), )
             )
         else:
             return GeoCountriesCountryCodeGet200Response(
                 success = True,
                 data = realzilla.client.models._geo_countries__country_code__get_200_response_data._geo_countries__countryCode__get_200_response_data(
-                    country = realzilla.client.models._geo_countries__country_code__get_200_response_data_country._geo_countries__countryCode__get_200_response_data_country(
+                    country = realzilla.client.models.external_country.ExternalCountry(
                         id = '', 
                         code = 'AD', 
                         name = '', 
                         name_normalized = '', 
                         population = 1.337, 
                         surface = 1.337, 
-                        administrative_level1_type = 'STATE', 
+                        administrative_level1_type = null, 
                         administrative_level1_name = '', 
-                        administrative_level2_type = 'STATE', 
+                        administrative_level2_type = null, 
                         administrative_level2_name = '', 
-                        administrative_level3_type = 'STATE', 
+                        administrative_level3_type = null, 
                         administrative_level3_name = '', 
-                        administrative_level4_type = 'STATE', 
+                        administrative_level4_type = null, 
                         administrative_level4_name = '', ), ),
         )
         """

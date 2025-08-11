@@ -17,8 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from realzilla.client.models.external_city import ExternalCity
+from realzilla.client.models.external_country import ExternalCountry
+from realzilla.client.models.external_search_entry import ExternalSearchEntry
 from realzilla.client.models.search_query_status import SearchQueryStatus
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +33,11 @@ class ExternalSearchQuery(BaseModel):
     id: StrictStr
     text: StrictStr
     status: SearchQueryStatus
-    __properties: ClassVar[List[str]] = ["id", "text", "status"]
+    population: Optional[Union[StrictFloat, StrictInt]]
+    search_entry: Optional[ExternalSearchEntry] = Field(default=None, alias="searchEntry")
+    city: Optional[ExternalCity] = None
+    country: Optional[ExternalCountry] = None
+    __properties: ClassVar[List[str]] = ["id", "text", "status", "population", "searchEntry", "city", "country"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -71,6 +78,25 @@ class ExternalSearchQuery(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of search_entry
+        if self.search_entry:
+            _dict['searchEntry'] = self.search_entry.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of city
+        if self.city:
+            _dict['city'] = self.city.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of country
+        if self.country:
+            _dict['country'] = self.country.to_dict()
+        # set to None if population (nullable) is None
+        # and model_fields_set contains the field
+        if self.population is None and "population" in self.model_fields_set:
+            _dict['population'] = None
+
+        # set to None if city (nullable) is None
+        # and model_fields_set contains the field
+        if self.city is None and "city" in self.model_fields_set:
+            _dict['city'] = None
+
         return _dict
 
     @classmethod
@@ -85,7 +111,11 @@ class ExternalSearchQuery(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "text": obj.get("text"),
-            "status": obj.get("status")
+            "status": obj.get("status"),
+            "population": obj.get("population"),
+            "searchEntry": ExternalSearchEntry.from_dict(obj["searchEntry"]) if obj.get("searchEntry") is not None else None,
+            "city": ExternalCity.from_dict(obj["city"]) if obj.get("city") is not None else None,
+            "country": ExternalCountry.from_dict(obj["country"]) if obj.get("country") is not None else None
         })
         return _obj
 

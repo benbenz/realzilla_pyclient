@@ -8,15 +8,15 @@ Method | HTTP request | Description
 
 
 # **admin_web_webpages_post**
-> AdminWebWebpagesPost2XXResponse admin_web_webpages_post(admin_web_webpages_post_request)
+> SimpleResponse admin_web_webpages_post(admin_web_webpages_post_request)
 
 ### Example
 
 
 ```python
 import realzilla.client
-from realzilla.client.models.admin_web_webpages_post2_xx_response import AdminWebWebpagesPost2XXResponse
 from realzilla.client.models.admin_web_webpages_post_request import AdminWebWebpagesPostRequest
+from realzilla.client.models.simple_response import SimpleResponse
 from realzilla.client.rest import ApiException
 from pprint import pprint
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdminWebWebpagesPost2XXResponse**](AdminWebWebpagesPost2XXResponse.md)
+[**SimpleResponse**](SimpleResponse.md)
 
 ### Authorization
 

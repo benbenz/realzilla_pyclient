@@ -20,7 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from realzilla.client.models.error_response import ErrorResponse
-from realzilla.client.models.geo_get_country_by_code_response200 import GeoGetCountryByCodeResponse200
+from realzilla.client.models.geo_countries_country_code_get200_response import GeoCountriesCountryCodeGet200Response
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class GeoGetCountryByCodeResponse(BaseModel):
     """
     GeoGetCountryByCodeResponse
     """ # noqa: E501
-    var_200: GeoGetCountryByCodeResponse200 = Field(alias="200")
+    var_200: GeoCountriesCountryCodeGet200Response = Field(alias="200")
     var_4xx: ErrorResponse = Field(alias="4xx")
     var_5xx: ErrorResponse = Field(alias="5xx")
     __properties: ClassVar[List[str]] = ["200", "4xx", "5xx"]
@@ -93,7 +93,7 @@ class GeoGetCountryByCodeResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "200": GeoGetCountryByCodeResponse200.from_dict(obj["200"]) if obj.get("200") is not None else None,
+            "200": GeoCountriesCountryCodeGet200Response.from_dict(obj["200"]) if obj.get("200") is not None else None,
             "4xx": ErrorResponse.from_dict(obj["4xx"]) if obj.get("4xx") is not None else None,
             "5xx": ErrorResponse.from_dict(obj["5xx"]) if obj.get("5xx") is not None else None
         })

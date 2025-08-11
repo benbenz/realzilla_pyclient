@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**var_200** | [**AdminSearchGetSearchQueriesResponse200**](AdminSearchGetSearchQueriesResponse200.md) |  | 
+**var_200** | [**AdminSearchQueriesCountryIdGet200Response**](AdminSearchQueriesCountryIdGet200Response.md) |  | 
 **var_4xx** | [**ErrorResponse**](ErrorResponse.md) |  | 
 **var_5xx** | [**ErrorResponse**](ErrorResponse.md) |  | 
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**country** | [**GeoCountriesCountryCodeGet200ResponseDataCountry**](GeoCountriesCountryCodeGet200ResponseDataCountry.md) |  | 
+**country** | [**ExternalCountry**](ExternalCountry.md) |  | 
 
 ## Example
 

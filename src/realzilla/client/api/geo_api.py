@@ -91,8 +91,8 @@ class GeoApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeoCountriesCountryCodeGet200Response",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -159,8 +159,8 @@ class GeoApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeoCountriesCountryCodeGet200Response",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -227,8 +227,8 @@ class GeoApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "GeoCountriesCountryCodeGet200Response",
-            '4XX': "AdminWebWebpagesPost4XXResponse",
-            '5XX': "AdminWebWebpagesPost4XXResponse",
+            '4XX': "ErrorResponse",
+            '5XX': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

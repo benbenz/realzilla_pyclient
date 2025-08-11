@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **text** | **str** |  | 
 **status** | [**SearchQueryStatus**](SearchQueryStatus.md) |  | 
+**population** | **float** |  | 
+**search_entry** | [**ExternalSearchEntry**](ExternalSearchEntry.md) |  | [optional] 
+**city** | [**ExternalCity**](ExternalCity.md) |  | [optional] 
+**country** | [**ExternalCountry**](ExternalCountry.md) |  | [optional] 
 
 ## Example
 
