@@ -22,8 +22,5 @@ Then you can either use the provided binary `openapi-generator-cli` (from nix) o
 To update the Python client, run the following command:
 
 ```zsh
-# using cli command directly
-openapi-generator-cli generate -i ../realzilla_backend/openapi.yaml -g python -o src
-# or using just
 just generate-client
 ```

@@ -1,22 +1,24 @@
 [project]
-name = "realzilla-client"
-version = "0.1.0"
-description = "RealZilla Client for Python."
+name = "realzilla.client"
+version = "1.0.0"
+description = "Realzilla API"
 authors = [
-    { name = "Benoit Simon", email = "your.email@example.com" }
+  {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
 ]
+license = "NoLicense"
 readme = "README.md"
-requires-python = ">=3.8"
+keywords = ["OpenAPI", "OpenAPI-Generator", "Realzilla API"]
+requires-python = ">=3.9"
+
 dependencies = [
   "urllib3 (>=2.1.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
-  "typing-extensions (>=4.7.1)",
-  "mypy"
+  "typing-extensions (>=4.7.1)"
 ]
 
 [project.urls]
-Repository = "https://github.com/benbenz/realzilla_client"
+Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
@@ -29,30 +31,15 @@ flake8 = ">= 4.0.0"
 types-python-dateutil = ">= 2.8.19.14"
 mypy = ">= 1.5"
 
-[tool.setuptools]
-package-dir = { "" = "src" }
-include-package-data = true
-
-[tool.setuptools.packages.find]
-where = ["src"]
-include = ["realzilla.client.*"]
-exclude = ["tests*"]
-namespaces = true
-
-# If you ship data files INSIDE the package, list them here.
-# Replace "realzilla" with your actual top-level package folder under src/
-[tool.setuptools.package-data]
-"realzilla.client" = ["py.typed", "data/*.json", "templates/**/*.html"]
 
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
+
 [tool.mypy]
-namespace_packages = true
-explicit_package_bases = true
-mypy_path = ["src"]      # <-- key bit for -p
-disable_error_code = ["import-untyped"]
 files = [
   "realzilla.client",
   #"test",  # auto-generated tests
@@ -89,3 +76,20 @@ disallow_any_generics = true
 #
 ### This one can be tricky to get passing if you use a lot of untyped libraries
 #warn_return_any = true
+
+[[tool.mypy.overrides]]
+module = [
+  "realzilla.client.configuration",
+]
+warn_unused_ignores = true
+strict_equality = true
+extra_checks = true
+check_untyped_defs = true
+disallow_subclassing_any = true
+disallow_untyped_decorators = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+no_implicit_reexport = true
+warn_return_any = true
